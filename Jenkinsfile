@@ -3,9 +3,9 @@ pipeline {
         label 'docker-slave-demo'
     }
     stages {
-        stage('Test') {
+        stage('Build') {
             steps {
-                sh 'mvn --version'
+                sh 'mvn -B -DskipTests clean package'
             }
         }
     }
